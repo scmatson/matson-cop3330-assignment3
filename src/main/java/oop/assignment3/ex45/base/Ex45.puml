@@ -1,0 +1,27 @@
+@startuml
+
+class WordFinder
+{
+    - a: int "amount"
+    - String inputData:
+    + replaceWord(int size, String[] arr)
+}
+class readFile
+{
+    -inputFile
+    +int amount()
+    +void copyInput(int size, String[] arr)
+
+}
+
+class outputFile
+{
+    + String fileName(String name)
+    + void outFile(int size, String[] arr, String name)
+}
+
+WordFinder-->readFile
+readFile-->WordFinder
+WordFinder-->outputFile
+
+@enduml

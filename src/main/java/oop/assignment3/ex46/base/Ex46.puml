@@ -1,0 +1,38 @@
+@startuml
+
+class WordFrequencyFinder
+{
+    - int a "amount"
+    - String inputData
+    - int badger
+    - int snake
+    - int mushroom
+    - int ordered_words
+}
+class readFile
+{
+    -inputFile
+    +int amount()
+    +void copyInput(int size, String[] arr)
+
+}
+
+class countWords
+{
+    +Occurrences(String str, String word)
+    +wordLength(String word)
+}
+
+class displayOutput
+{
+    +output(int count, int a, int b, int c)
+    +printStar(int frequency, String word)
+}
+
+WordFrequencyFinder-->readFile
+readFile-->WordFrequencyFinder
+WordFrequencyFinder-->countWords
+WordFrequencyFinder-->displayOutput
+
+
+@enduml
